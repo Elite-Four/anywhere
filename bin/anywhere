@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 var os = require('os');
+var fs=require('fs')
 var connect = require('connect');
 var serveStatic = require('serve-static');
 var serveIndex = require('serve-index');
+var formidable = require('formidable');
 
 var exec = require('child_process').exec;
 var spawn = require('child_process').spawn;
@@ -71,9 +73,31 @@ var getIPAddress = function () {
 };
 
 var app = connect();
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  next();
+app
+  .use(function (req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    switch(req.method){
+      case "GET":
+        next()
+        break
+      case "POST":
+        var uploadPath="anywhere_uploads"
+        !fs.existsSync(uploadPath)&&fs.mkdirSync(uploadPath)
+        var form = new formidable.IncomingForm();
+        form.uploadDir = __dirname+"/"+uploadPath;
+        form.keepExtensions = true;
+        form.parse(req,function(){
+          res.writeHead(302,{'Location': '/'})
+          res.end()
+        })
+      break
+    case "PUT":
+      break
+    case "DELETE":
+      break
+    default:
+      break
+  }
 });
 app.use(serveStatic(argv.dir, {'index': ['index.html']}));
 app.use(serveIndex(argv.dir, {'icons': true}));
