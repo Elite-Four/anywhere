@@ -3,7 +3,7 @@ var os = require('os');
 var fs=require('fs')
 var connect = require('connect');
 var serveStatic = require('serve-static');
-var serveIndex = require('serve-index');
+var serveIndex = require('serve-index-uploader');
 var formidable = require('formidable');
 
 var exec = require('child_process').exec;
@@ -87,6 +87,7 @@ app
         form.uploadDir = __dirname+"/"+uploadPath;
         form.keepExtensions = true;
         form.parse(req,function(){
+            console.log(req.files)
           res.writeHead(302,{'Location': '/'})
           res.end()
         })

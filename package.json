@@ -1,7 +1,7 @@
 {
-  "name": "anywhere",
-  "version": "1.2.0",
-  "description": "Run static file server anywhere",
+  "name": "anywhere-uploader",
+  "version": "0.0.2",
+  "description": "Run static file server anywhere with uploader",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,21 +15,21 @@
     "server",
     "Assets"
   ],
-  "author": "Jackson Tian",
+  "author": "dafr",
   "license": "MIT",
   "dependencies": {
     "connect": "3.1.1",
-    "serve-index": "1.2.0",
-    "serve-static": "1.5.3",
+    "formidable": "^1.0.17",
     "minimist": "~0.1.0",
-    "formidable": "^1.0.17"
+    "serve-index-uploader": "0.0.2",
+    "serve-static": "1.5.3"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/JacksonTian/anywhere.git"
+    "url": "git://github.com/Elite-Four/anywhere.git"
   },
   "bugs": {
     "url": "https://github.com/JacksonTian/anywhere/issues"
   },
-  "homepage": "https://github.com/JacksonTian/anywhere"
+  "homepage": "https://github.com/Elite-Four/anywhere"
 }
