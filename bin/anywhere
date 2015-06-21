@@ -87,7 +87,6 @@ app
         form.uploadDir = process.cwd()+"/"+uploadPath;
         form.keepExtensions = true;
         form.parse(req,function(){
-            console.log(req.files)
           res.writeHead(302,{'Location': '/'})
           res.end()
         })

@@ -1,6 +1,6 @@
 {
   "name": "anywhere-uploader",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Run static file server anywhere with uploader",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "connect": "3.1.1",
     "formidable": "^1.0.17",
     "minimist": "~0.1.0",
-    "serve-index-uploader": "0.0.2",
+    "serve-index-uploader": "0.0.4",
     "serve-static": "1.5.3"
   },
   "repository": {
