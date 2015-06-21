@@ -1,6 +1,6 @@
 {
   "name": "anywhere-uploader",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Run static file server anywhere with uploader",
   "main": "index.js",
   "scripts": {

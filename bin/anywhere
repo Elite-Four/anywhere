@@ -84,7 +84,7 @@ app
         var uploadPath="anywhere_uploads"
         !fs.existsSync(uploadPath)&&fs.mkdirSync(uploadPath)
         var form = new formidable.IncomingForm();
-        form.uploadDir = __dirname+"/"+uploadPath;
+        form.uploadDir = process.cwd()+"/"+uploadPath;
         form.keepExtensions = true;
         form.parse(req,function(){
             console.log(req.files)
